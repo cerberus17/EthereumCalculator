@@ -2,12 +2,82 @@
   "contract_name": "Calculator",
   "abi": [
     {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "num",
+          "type": "uint256"
+        }
+      ],
+      "name": "addToNumber",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "num",
+          "type": "uint256"
+        }
+      ],
+      "name": "multiplyNumber",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "num",
+          "type": "uint256"
+        }
+      ],
+      "name": "subtractFromNumber",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
       "inputs": [],
+      "name": "getResult",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "num",
+          "type": "uint256"
+        }
+      ],
+      "name": "divideByNumber",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "initial",
+          "type": "uint256"
+        }
+      ],
       "payable": false,
       "type": "constructor"
     }
   ],
-  "unlinked_binary": "0x60606040523415600e57600080fd5b5b5b5b603680601e6000396000f30060606040525b600080fd00a165627a7a7230582039052d63630abae1132c11371a304ce4b8d5099993119d5d48c914f050decbda0029",
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b604051602080610198833981016040528080519150505b60008190555b505b61015b8061003d6000396000f300606060405263ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166306ccd230811461006957806313d8f1e114610081578063a940160314610099578063de292789146100b1578063f5cb911d146100d6575b600080fd5b341561007457600080fd5b61007f6004356100ee565b005b341561008c57600080fd5b61007f6004356100fa565b005b34156100a457600080fd5b61007f600435610106565b005b34156100bc57600080fd5b6100c4610113565b60405190815260200160405180910390f35b34156100e157600080fd5b61007f60043561011a565b005b60008054820190555b50565b60008054820290555b50565b6000805482900390555b50565b6000545b90565b8060005481151561012757fe5b046000555b505600a165627a7a72305820d5ffe424c195202a2b6d0c9019fc064789cc41054224ff48fed68bcba89f67300029",
   "networks": {
     "1507142678037": {
       "events": {},
@@ -20,8 +90,14 @@
       "links": {},
       "address": "0xf0852e788635449561d035ae61028828cb8c87c9",
       "updated_at": 1507142983485
+    },
+    "1507144163853": {
+      "events": {},
+      "links": {},
+      "address": "0x30f9748907be38e88ceec3dd9a6462edac24ceec",
+      "updated_at": 1507144168129
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1507142983485
+  "updated_at": 1507144168129
 }
