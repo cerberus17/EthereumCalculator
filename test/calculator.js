@@ -12,7 +12,23 @@ contract('Calculator', function(accounts) {
       calculator.subtractFromNumber(5);
       return calculator.getResult.call();
     }).then((result) => {
-      assert.equal(result.valueOf(), 15, "Contract initialized with value NOT equal to 10!!!");
+      assert.equal(result.valueOf(), 15, "Contract initialized with value NOT equal to 15!!!");
+      calculator.multiplyWithNumber(10);
+      return calculator.getResult.call();
+    }).then((result) => {
+      assert.equal(result.valueOf(), 150, "Contract initialized with value NOT equal to 150");
+      calculator.divideByNumber(5);
+      return calculator.getResult.call();
+    }).then((result) => {
+      assert.equal(result.valueOf(), 30, "Contract initialized with value NOT equal to 30");
+      calculator.double();
+      return calculator.getResult.call();
+    }).then((result) => {
+      assert.equal(result.valueOf(), 60, "Contract initialized with value NOT equal to 60");
+      calculator.half();
+      return calculator.getResult.call();
+    }).then((result) => {
+      assert.equal(result.valueOf(), 30, "Contract initialized with value NOT equal to 30");
     });
   });
 });

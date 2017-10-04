@@ -20,11 +20,19 @@ contract Calculator {
     result = result - num;
   }
 
-  function multiplyNumber(uint num) {
+  function multiplyWithNumber(uint num) {
     result = result * num;
   }
 
   function divideByNumber(uint num) {
     result = result / num;
+  }
+
+  function double() {
+    result *= 2;
+  }
+
+  function half() {
+    result /= 2;
   }
 }
