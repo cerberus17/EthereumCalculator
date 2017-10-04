@@ -1,0 +1,27 @@
+{
+  "contract_name": "Calculator",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600e57600080fd5b5b5b5b603680601e6000396000f30060606040525b600080fd00a165627a7a7230582039052d63630abae1132c11371a304ce4b8d5099993119d5d48c914f050decbda0029",
+  "networks": {
+    "1507142678037": {
+      "events": {},
+      "links": {},
+      "address": "0x916e63fe071f98b639464d3bb7b58c66b9b13859",
+      "updated_at": 1507142935571
+    },
+    "1507142979214": {
+      "events": {},
+      "links": {},
+      "address": "0xf0852e788635449561d035ae61028828cb8c87c9",
+      "updated_at": 1507142983485
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1507142983485
+}
