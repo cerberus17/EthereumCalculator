@@ -1,0 +1,99 @@
+{
+  "contract_name": "MultiNumberBettingAbstractV1",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "player",
+          "type": "address"
+        }
+      ],
+      "name": "checkWinning",
+      "outputs": [
+        {
+          "name": "winnerAddress",
+          "type": "address"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "timeGuessed",
+          "type": "uint256"
+        },
+        {
+          "name": "ethers",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "totalGuesses",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "number",
+          "type": "uint8"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "guess",
+      "outputs": [
+        {
+          "name": "isCorrect",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getLastWinnerInfo",
+      "outputs": [
+        {
+          "name": "winnerAddress",
+          "type": "address"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "timeGuessed",
+          "type": "uint256"
+        },
+        {
+          "name": "ethers",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1507408448766
+}
