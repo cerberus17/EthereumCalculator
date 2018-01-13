@@ -1,5 +1,7 @@
-const MultiNumberBettingV6 = artifacts.require("./MultiNumberBettingV6.sol");
+var HelloWorld = artifacts.require("./HelloWorld.sol");
+var Reservations = artifacts.require("./HotelReservation");
 
 module.exports = function(deployer) {
-  deployer.deploy(MultiNumberBettingV6, 1, 2, 3);
+  deployer.deploy(HelloWorld);
+  deployer.deploy(Reservations);
 };

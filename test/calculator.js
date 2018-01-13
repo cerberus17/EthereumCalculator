@@ -2,6 +2,7 @@ const Calculator = artifacts.require('./Calculator.sol');
 
 contract('Calculator', function(accounts) {
   it("should assert true", function() {
+    console.log("HERE! " + web3.utils.hexToNumber(0xa));
     let calculator;
     return Calculator.deployed().then((instance) => {
       calculator = instance;

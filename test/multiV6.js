@@ -1,5 +1,4 @@
-var MultiNumberBettingV6 = artifacts.require("./MultiNumberBettingV6.sol");
-
+var LocalEthereum = artifacts.require("./LocalEthereum.sol");
 /**
  * Test Case
  * 1. Create a winner (John) & a loser (Bob)
@@ -9,40 +8,36 @@ var MultiNumberBettingV6 = artifacts.require("./MultiNumberBettingV6.sol");
  * 5. Check if Bill is winning - should return false
  */
 
-contract('MultiNumberBettingV6', function(accounts) {
+contract('HelloWorld', function (accounts) {
 
-  var johns_address = accounts[0];
-  var bills_address = accounts[1];
-  var franks_address= accounts[2];
+  it("max size",  function () {
+    let escrowContract;
 
-  it("should assert true", function() {
-    var betting;
-    return MultiNumberBettingV6.deployed().then(function(instance) {
-      betting = instance;
-
-      web3.eth.sendTransaction({from: bills_address, to: betting.address, value: web3.toWei(.00002, "ether")});
-      console.log("John's balance: " + web3.eth.getBalance(johns_address));
-      // console.log("Betting " + JSON.stringify(betting));
-      return betting.getBalance.call();
+    return LocalEthereum.deployed().then((instance) => {
+      escrowContract = instance;
+      createValue(escrowContract, accounts[0]);
+      createValue(escrowContract, accounts[0]);
+      return escrowContract.getValue().call();
     }).then((result) => {
-      console.log("Contract initial balance " + result);
-      assert.equal(result.valueOf(), web3.toWei(.00002, "ether"), "Initial contract balance should be .00002 ether");
-      betting.guess(8, "John", {
-        from: johns_address,
-        value: web3.toWei(.000006, "ether")
-      });
-      return betting.getBalance.call();
-    }).then((result) => {
-      console.log("New balance " + result.valueOf());
-      assert.equal(result.valueOf(), web3.toWei(.000026, "ether"), "Balance after losing bet should be .000026 ether");
-      betting.guess(2, "John", {
-        from: johns_address,
-        value: web3.toWei(.000006, "ether")
-      });
-      return betting.getBalance.call();
-    }).then((result) => {
-      console.log("New balance " + result.valueOf());
-      assert.equal(result.valueOf(), web3.toWei(.00002, "ether"), "Balance after winning bet should be .00002 ether");
+      assert.equal(result.valueOf(), 2, "Huh?");
     })
   });
+
+
 });
+
+function createValue(escrowContract, account){
+  console.log('createEscrow');
+  escrowContract.methods.addValue().send({from: account,gas:210000,gasPrice:5000000000})
+      .on('transactionHash', function(hash){
+        console.log('hash',hash);
+      })
+      .on('receipt', function(receipt){
+        console.log('receipt',receipt);
+      })
+      .on('confirmation', function(confirmationNumber, receipt){
+        console.log('confirmation',confirmationNumber);
+      })
+      .on('error', console.error);
+
+}

@@ -1,5 +1,5 @@
 {
-  "contract_name": "MultiNumberBettingAbstractV1",
+  "contractName": "MultiNumberBettingAbstractV1",
   "abi": [
     {
       "constant": false,
@@ -29,6 +29,7 @@
         }
       ],
       "payable": false,
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -42,6 +43,7 @@
         }
       ],
       "payable": false,
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -64,6 +66,7 @@
         }
       ],
       "payable": true,
+      "stateMutability": "payable",
       "type": "function"
     },
     {
@@ -89,11 +92,646 @@
         }
       ],
       "payable": false,
+      "stateMutability": "nonpayable",
       "type": "function"
     }
   ],
-  "unlinked_binary": "0x",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.0;\r\n\r\ncontract MultiNumberBettingAbstractV1 {\r\n  uint constant MAX_BET = 0.0005 ether;\r\n  uint constant MIN_BET = 0.000001 ether;\r\n\r\n  function guess(uint8 number, string name) payable returns (bool isCorrect);\r\n\r\n  function totalGuesses() returns (uint);\r\n\r\n  function getLastWinnerInfo() returns (address winnerAddress, string name, uint timeGuessed, uint ethers);\r\n\r\n  function checkWinning(address player) returns (address winnerAddress, string name, uint timeGuessed, uint ethers);\r\n}\r\n",
+  "sourcePath": "C:\\cygwin\\home\\adamk\\eth\\calculator\\contracts\\MultiNumberBettingAbstractV1.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/C/cygwin/home/adamk/eth/calculator/contracts/MultiNumberBettingAbstractV1.sol",
+      "exportedSymbols": {
+        "MultiNumberBettingAbstractV1": [
+          245
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".0"
+          ]
+        },
+        "id": 200,
+        "name": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            245
+          ],
+          "name": "MultiNumberBettingAbstractV1",
+          "scope": 246
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": true,
+              "name": "MAX_BET",
+              "scope": 245,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 201,
+                "name": "ElementaryTypeName",
+                "src": "70:4:5"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "302e30303035",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": "ether",
+                  "token": "number",
+                  "type": "int_const 500000000000000",
+                  "value": "0.0005"
+                },
+                "id": 202,
+                "name": "Literal",
+                "src": "94:12:5"
+              }
+            ],
+            "id": 203,
+            "name": "VariableDeclaration",
+            "src": "70:36:5"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "name": "MIN_BET",
+              "scope": 245,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 204,
+                "name": "ElementaryTypeName",
+                "src": "111:4:5"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "302e303030303031",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": "ether",
+                  "token": "number",
+                  "type": "int_const 1000000000000",
+                  "value": "0.000001"
+                },
+                "id": 205,
+                "name": "Literal",
+                "src": "135:14:5"
+              }
+            ],
+            "id": 206,
+            "name": "VariableDeclaration",
+            "src": "111:38:5"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "constant": false,
+              "implemented": false,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "guess",
+              "payable": true,
+              "scope": 245,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "number",
+                      "scope": 215,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 207,
+                        "name": "ElementaryTypeName",
+                        "src": "171:5:5"
+                      }
+                    ],
+                    "id": 208,
+                    "name": "VariableDeclaration",
+                    "src": "171:12:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "name",
+                      "scope": 215,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 209,
+                        "name": "ElementaryTypeName",
+                        "src": "185:6:5"
+                      }
+                    ],
+                    "id": 210,
+                    "name": "VariableDeclaration",
+                    "src": "185:11:5"
+                  }
+                ],
+                "id": 211,
+                "name": "ParameterList",
+                "src": "170:27:5"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "isCorrect",
+                      "scope": 215,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 212,
+                        "name": "ElementaryTypeName",
+                        "src": "215:4:5"
+                      }
+                    ],
+                    "id": 213,
+                    "name": "VariableDeclaration",
+                    "src": "215:14:5"
+                  }
+                ],
+                "id": 214,
+                "name": "ParameterList",
+                "src": "214:16:5"
+              }
+            ],
+            "id": 215,
+            "name": "FunctionDefinition",
+            "src": "156:75:5"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "constant": false,
+              "implemented": false,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "totalGuesses",
+              "payable": false,
+              "scope": 245,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 216,
+                "name": "ParameterList",
+                "src": "258:2:5"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 220,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 217,
+                        "name": "ElementaryTypeName",
+                        "src": "270:4:5"
+                      }
+                    ],
+                    "id": 218,
+                    "name": "VariableDeclaration",
+                    "src": "270:4:5"
+                  }
+                ],
+                "id": 219,
+                "name": "ParameterList",
+                "src": "269:6:5"
+              }
+            ],
+            "id": 220,
+            "name": "FunctionDefinition",
+            "src": "237:39:5"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "constant": false,
+              "implemented": false,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getLastWinnerInfo",
+              "payable": false,
+              "scope": 245,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 221,
+                "name": "ParameterList",
+                "src": "308:2:5"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "winnerAddress",
+                      "scope": 231,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 222,
+                        "name": "ElementaryTypeName",
+                        "src": "320:7:5"
+                      }
+                    ],
+                    "id": 223,
+                    "name": "VariableDeclaration",
+                    "src": "320:21:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "name",
+                      "scope": 231,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 224,
+                        "name": "ElementaryTypeName",
+                        "src": "343:6:5"
+                      }
+                    ],
+                    "id": 225,
+                    "name": "VariableDeclaration",
+                    "src": "343:11:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "timeGuessed",
+                      "scope": 231,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 226,
+                        "name": "ElementaryTypeName",
+                        "src": "356:4:5"
+                      }
+                    ],
+                    "id": 227,
+                    "name": "VariableDeclaration",
+                    "src": "356:16:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "ethers",
+                      "scope": 231,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 228,
+                        "name": "ElementaryTypeName",
+                        "src": "374:4:5"
+                      }
+                    ],
+                    "id": 229,
+                    "name": "VariableDeclaration",
+                    "src": "374:11:5"
+                  }
+                ],
+                "id": 230,
+                "name": "ParameterList",
+                "src": "319:67:5"
+              }
+            ],
+            "id": 231,
+            "name": "FunctionDefinition",
+            "src": "282:105:5"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "constant": false,
+              "implemented": false,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "checkWinning",
+              "payable": false,
+              "scope": 245,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "player",
+                      "scope": 244,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 232,
+                        "name": "ElementaryTypeName",
+                        "src": "415:7:5"
+                      }
+                    ],
+                    "id": 233,
+                    "name": "VariableDeclaration",
+                    "src": "415:14:5"
+                  }
+                ],
+                "id": 234,
+                "name": "ParameterList",
+                "src": "414:16:5"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "winnerAddress",
+                      "scope": 244,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 235,
+                        "name": "ElementaryTypeName",
+                        "src": "440:7:5"
+                      }
+                    ],
+                    "id": 236,
+                    "name": "VariableDeclaration",
+                    "src": "440:21:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "name",
+                      "scope": 244,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 237,
+                        "name": "ElementaryTypeName",
+                        "src": "463:6:5"
+                      }
+                    ],
+                    "id": 238,
+                    "name": "VariableDeclaration",
+                    "src": "463:11:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "timeGuessed",
+                      "scope": 244,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 239,
+                        "name": "ElementaryTypeName",
+                        "src": "476:4:5"
+                      }
+                    ],
+                    "id": 240,
+                    "name": "VariableDeclaration",
+                    "src": "476:16:5"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "ethers",
+                      "scope": 244,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 241,
+                        "name": "ElementaryTypeName",
+                        "src": "494:4:5"
+                      }
+                    ],
+                    "id": 242,
+                    "name": "VariableDeclaration",
+                    "src": "494:11:5"
+                  }
+                ],
+                "id": 243,
+                "name": "ParameterList",
+                "src": "439:67:5"
+              }
+            ],
+            "id": 244,
+            "name": "FunctionDefinition",
+            "src": "393:114:5"
+          }
+        ],
+        "id": 245,
+        "name": "ContractDefinition",
+        "src": "27:483:5"
+      }
+    ],
+    "id": 246,
+    "name": "SourceUnit",
+    "src": "0:512:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
   "networks": {},
-  "schema_version": "0.0.5",
-  "updated_at": 1507408448766
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-07T08:11:02.071Z"
 }
